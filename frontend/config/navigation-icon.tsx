@@ -1,0 +1,38 @@
+"use client"
+import {
+  Home,
+  Calendar,
+  Users,
+  ClipboardList,
+  Wallet,
+  Percent,
+  Bell,
+  FileText,
+  BarChart3,
+  Settings,
+  MapPin,
+  UserCog,
+  Shield,
+  CreditCard,
+  Layers,
+  Star,
+} from "lucide-react";
+
+export const navigationIcon: Record<string, React.ElementType> = {
+  Dashboard: Home,
+  Bookings: Calendar,
+  Customers: Users,
+  Services: ClipboardList,
+  Finance: Wallet,
+  Offers: Percent,
+  Notifications: Bell,
+  CMS: FileText,
+  Reports: BarChart3,
+  Settings: Settings,
+  Locations: MapPin,
+  Staff: UserCog,
+  Security: Shield,
+  Subscriptions: CreditCard,
+  Integrations: Layers,
+  Reviews: Star,
+};
