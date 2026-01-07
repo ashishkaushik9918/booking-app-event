@@ -69,3 +69,14 @@ export class RefreshTokenRevokedError extends HttpError {
         );
     }
 }
+
+export class InvalidTokenExpiration extends HttpError {
+    constructor() {
+        super(
+            "Invalid access token",
+            401,
+            "",
+            "INVALID_ACCESS_TOKEN"
+        );
+    }
+}

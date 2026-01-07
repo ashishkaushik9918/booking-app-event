@@ -1,7 +1,10 @@
 import { NextResponse, NextRequest } from 'next/server';
 function isAuthenticated(request: NextRequest): boolean {
-    const sessionCookie = request.cookies.get('accessToken');
-    return !!sessionCookie;
+    const accessToken = request.cookies.get("accessToken")?.value;
+    const refreshToken = request.cookies.get("refreshToken")?.value;
+    if (accessToken) return true;
+    if (!accessToken && refreshToken) return true;
+    return false;
 }
 
 export function middleware(request: NextRequest) {
