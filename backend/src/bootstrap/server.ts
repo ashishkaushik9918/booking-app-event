@@ -12,6 +12,7 @@ import mongodb from "../plugins/mongodb";
 import { swagger } from "../plugins/swagger";
 import fastifyCookie from "@fastify/cookie";
 import { HttpError } from "../exceptions/http-error";
+import { setUpPluginsConfig } from "../plugins";
 
 
 const bootStrapApplication = async () => {
@@ -28,7 +29,6 @@ const bootStrapApplication = async () => {
 bootStrapApplication();
 
 export async function setUpApplication(app: FastifyInstance) {
-
     app.register(fastifyCookie, {
         secret: process.env.COOKIE_SECRET,
     });
@@ -39,6 +39,7 @@ export async function setUpApplication(app: FastifyInstance) {
     await setUpRoutes(app);
     await setUpRateLimit(app);
     await app.register(swagger)
+    await setUpPluginsConfig(app);
 
 
 }
@@ -130,6 +131,7 @@ export async function setUpExceptionHandler(app: FastifyInstance) {
                 },
                 "Unhandled exception"
             );
+
             return reply.status(500).send({
                 success: false,
                 message: "Internal Server Error",
