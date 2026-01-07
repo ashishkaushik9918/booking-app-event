@@ -1,4 +1,3 @@
-"use client"
 import BookingTable, { Booking } from "./_components/table/BookingTable";
 
 const bookings: Booking[] = [
@@ -30,10 +29,11 @@ const bookings: Booking[] = [
   },
 ];
 
+export const metadata = {
+  title:"Booking List"
+}
 export default function Page() {
-  const handleStatusChange = (id: number, status: Booking["status"]) => {
-    console.log(`Booking ID ${id} changed to ${status}`);
-  };
 
-  return <BookingTable data={bookings} onStatusChange={handleStatusChange} />;
+
+  return <BookingTable data={bookings} />;
 }

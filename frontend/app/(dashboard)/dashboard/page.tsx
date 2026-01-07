@@ -9,10 +9,33 @@ import PaymentDonut from "@/components/dashboard/PaymentDonut";
 import CustomerGrowth from "@/components/dashboard/customer-growth";
 import BookingHeatmap from "@/components/dashboard/booking-heatmap";
 import RecentBookings from "@/components/dashboard/recent-bookings";
-
+import { useSocket } from "@/hooks/useSocket";
+import { useEffect } from "react";
+import LeadListener from "@/components/common/ring/Notification";
 export default function DashboardPage() {
+  const socket = useSocket();
+ 
+
+  const handleLeadCreate = (payload: any) => {
+    console.log(payload, "payload")
+  
+
+   
+  }
+ useEffect(() => {
+  if (!socket) return;
+
+  socket.on("lead:created", handleLeadCreate);
+
+  return () => {
+    socket.off("lead:created", handleLeadCreate);
+  };
+}, [socket]);
   return (
-    <motion.div
+
+    <>
+      <LeadListener/>
+     <motion.div
       variants={container}
       initial="hidden"
       animate="show"
@@ -49,5 +72,6 @@ export default function DashboardPage() {
         <RecentBookings />
       </div>
     </motion.div>
+    </>
   );
 }
