@@ -45,6 +45,8 @@ export interface IUser extends Document {
     createdBy?: Types.ObjectId;
     createdAt: Date;
     updatedAt: Date;
+    name?: string;
+    googleId?: string;
 }
 
 export type SafeUser = Omit<
@@ -153,7 +155,9 @@ const UserSchema = new Schema(
         versionKey: false,
     }
 );
-
+UserSchema.virtual('name').get(function () {
+    return `${this.firstName} ${this.lastName}`;
+});
 UserSchema.index({ email: 1 });
 UserSchema.index({ provider: 1, providerId: 1 });
 UserSchema.index({ role: 1, isActive: 1 });

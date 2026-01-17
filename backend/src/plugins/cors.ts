@@ -9,6 +9,7 @@ export default fp(async (app) => {
                 "http://127.0.0.1:3000",
                 "https://your-frontend.com",
             ];
+
             if (!origin) return cb(null, true);
 
             if (allowedOrigins.includes(origin)) {

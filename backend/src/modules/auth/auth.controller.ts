@@ -1,6 +1,5 @@
 import { AuthService } from "./auth.services";
 import { FastifyRequest, FastifyReply } from "fastify";
-import { LoginDto } from "./auth.dto";
 import { UserModel } from "../../models/user.model";
 export const authLogin = async (request: FastifyRequest, response: FastifyReply) => {
     try {
@@ -29,7 +28,7 @@ export const authLogin = async (request: FastifyRequest, response: FastifyReply)
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 7 * 24 * 60 * 5,
+            maxAge: 7 * 24 * 60 * 5 * 24,
         });
 
         return response.status(200).send({
@@ -68,7 +67,7 @@ export const authRefresh = async (request: FastifyRequest, response: FastifyRepl
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
             path: "/",
-            maxAge: 7 * 24 * 60 * 5,
+            maxAge: 7 * 24 * 60 * 5 * 24,
         });
 
         return response.send({

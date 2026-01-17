@@ -12,7 +12,7 @@ export const generateAccessToken = (user: IUser) => {
             provider: user.provider,
         },
         JWT_SECRET,
-        { expiresIn: "15m" }
+        { expiresIn: "30d" }
     );
 };
 
@@ -22,7 +22,7 @@ export const generateRefreshToken = (user: IUser) => {
             sub: user._id,
         },
         REFRESH_SECRET,
-        { expiresIn: "7d" }
+        { expiresIn: "100d" }
     );
 };
 
