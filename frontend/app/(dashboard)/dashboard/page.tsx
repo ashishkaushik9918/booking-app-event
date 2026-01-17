@@ -11,7 +11,6 @@ import BookingHeatmap from "@/components/dashboard/booking-heatmap";
 import RecentBookings from "@/components/dashboard/recent-bookings";
 import { useSocket } from "@/hooks/useSocket";
 import { useEffect } from "react";
-import LeadListener from "@/components/common/ring/Notification";
 export default function DashboardPage() {
   const socket = useSocket();
  
@@ -34,7 +33,6 @@ export default function DashboardPage() {
   return (
 
     <>
-      <LeadListener/>
      <motion.div
       variants={container}
       initial="hidden"
@@ -43,7 +41,7 @@ export default function DashboardPage() {
     >
       <motion.div variants={item}>
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
-          Dashboard Overview
+          Dashboard Overview ewhgweh
         </h1>
         <p className="text-muted-foreground mt-1 sm:mt-2 text-sm sm:text-base">
           Business performance & real-time analytics

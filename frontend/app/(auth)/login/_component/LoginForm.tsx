@@ -2,7 +2,6 @@
 import { useState, useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import LoadingButton from "@/components/shared/button/loadingButton";
 import { toastError, toastSuccess } from "@/lib/toast";
@@ -10,6 +9,7 @@ import throttle from "lodash/throttle";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { authLogin } from "@/services/authServices";
+import { SocialLoginButton } from "./socialLoginButton";
 export default function LoginForm() {
 
     const [email, setEmail] = useState("");
@@ -21,8 +21,8 @@ export default function LoginForm() {
     const handleSubmit = useCallback(async () => {
         setLoading(true);
         try {
-            const response = await authLogin({email,password})
-            const result =  response;
+            const response = await authLogin({ email, password })
+            const result = response;
             if (!result.success) {
                 toastError(result.message);
             } else {
@@ -32,11 +32,11 @@ export default function LoginForm() {
                 }, 500);
             }
         } catch (err) {
-           if(err instanceof Error)  toastError( err?.message || "Something went wrong");
+            if (err instanceof Error) toastError(err?.message || "Something went wrong");
         } finally {
             setLoading(false);
         }
-    }, [email, password,router]);
+    }, [email, password, router]);
 
     const throttledSubmit = useMemo(
         () =>
@@ -120,14 +120,7 @@ export default function LoginForm() {
                         <span className="mx-2 text-gray-400 text-sm">or</span>
                         <span className="flex-grow border-t border-gray-300"></span>
                     </div>
-                    <div className="flex flex-col gap-3">
-                        <Button variant="outline" className="w-full">
-                            Continue with Google
-                        </Button>
-                        <Button variant="outline" className="w-full">
-                            Continue with GitHub
-                        </Button>
-                    </div>
+                  <SocialLoginButton/>
                     <p className="text-center text-sm text-gray-500 mt-6">
                         Don’t have an account?{" "}
                         <a href="#" className="text-blue-600 hover:underline">

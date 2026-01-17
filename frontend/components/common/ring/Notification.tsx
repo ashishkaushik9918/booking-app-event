@@ -89,11 +89,12 @@ export default function LeadListener() {
     return (
         <div>
             {!notificationsEnabled && (
-                <button onClick={enableNotifications} className="fixed top-4 right-4 z-50 px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200">
-                    Enable Notifications 🔔
+                  <button onClick={enableNotifications} className="  px-3 py-1 bg-blue-600 text-white rounded-sm shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200" title="Enable Notification Messages">
+                     🔔
                 </button>
             )}
-            <audio ref={audioRef} src="/iphone.mp3" preload="auto" />
+          
+            <audio ref={audioRef} src="/classis.mp3" preload="auto" />
 
             {notificationCount > 0 && (
                 <div className="fixed top-4 right-4 z-50 max-w-sm">

@@ -151,3 +151,254 @@ body {
   background-color: hsl(var(--muted));
   border-radius: 9999px;
 }
+
+.ant-input::placeholder {
+  font-size: 12px !important;
+}
+
+.bottom-modal .ant-modal {
+  transform-origin: bottom center;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Firefox */
+.ant-table-body,
+.ant-table-content {
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, Safari */
+.ant-table-body::-webkit-scrollbar,
+.ant-table-content::-webkit-scrollbar {
+  height: 6px;
+  /* horizontal scrollbar */
+  width: 6px;
+  /* vertical scrollbar */
+}
+
+.ant-table-body::-webkit-scrollbar-thumb,
+.ant-table-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.ant-table-body::-webkit-scrollbar-track,
+.ant-table-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.smart-table-scroll .ant-table-body,
+.smart-table-scroll .ant-table-content {
+  scrollbar-width: thin;
+}
+
+.smart-table-scroll .ant-table-body::-webkit-scrollbar,
+.smart-table-scroll .ant-table-content::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+
+@layer utilities {
+  .thin-scrollbar {
+    scrollbar-width: thin;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+  }
+}
+
+.sidebar {
+  background: "#ffffff";
+  height: "100vh";
+  position: "fixed";
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: "flex";
+  flex-direction: "column";
+  z-index: 100;
+  overflow: 'scroll';
+}
+
+.sidebar-box {
+  height: 64;
+  display: "flex";
+  align-items: "center";
+  justify-content: "center";
+  color: "#000000";
+  font-size: 18;
+  font-weight: 600;
+  border-bottom: "1px solid rgba(255,255,255,0.2)";
+  flex-shrink: 0;
+}
+
+.sidebar-box-1 {
+  flex: 1;
+  overflow-y: "auto";
+  overflow-x: "hidden";
+  padding-bottom: 20;
+}
+
+/* ===== Global Scrollbar Styling ===== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 3px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+}
+
+.ant-menu-submenu {
+  font-size: 13px !important;
+}
+
+.custom-table-1 .ant-table-thead>tr>th,
+.custom-table-1 .ant-table-tbody>tr>td {
+  font-size: 13px;
+  /* Or any smaller size */
+}
+
+.table-context-menu {
+  padding: 4px !important;
+}
+
+.table-context-menu .ant-dropdown-menu-item,
+.table-context-menu .ant-dropdown-menu-submenu-title {
+  padding: 4px 30px !important;
+  min-height: 28px;
+  line-height: 20px;
+}
+
+.table-context-menu .ant-dropdown-menu-item-icon {
+  font-size: 14px;
+}
+
+.table-context-menu .ant-dropdown-menu-item {
+  padding: 2px 8px !important;
+  font-size: 13px;
+}
+
+
+/* === Compact AntD Context Menu === */
+.compact-menu {
+  padding: 4px !important;
+}
+
+.compact-menu .ant-dropdown-menu-item,
+.compact-menu .ant-dropdown-menu-submenu-title {
+  padding: 4px 8px !important;
+  min-height: 28px !important;
+  line-height: 20px !important;
+  font-size: 13px;
+}
+
+.compact-menu .ant-dropdown-menu-item-icon {
+  font-size: 14px;
+  margin-inline-end: 8px;
+}
+
+.compact-menu .ant-dropdown-menu-submenu-arrow {
+  inset-inline-end: 6px;
+}
+
+.compact-menu .ant-dropdown-menu-item {
+  padding: 2px 6px !important;
+  font-size: 12px;
+}
+
+/* ===== Compact Context Menu ===== */
+.table-context-menu {
+  padding: 4px !important;
+  border-radius: 6px;
+}
+
+/* ===== Top-level items ===== */
+.table-context-menu>.ant-menu-item,
+.table-context-menu>.ant-menu-submenu>.ant-menu-submenu-title {
+  min-width: 150px;
+  padding: 4px 10px !important;
+  height: 28px !important;
+  line-height: 20px !important;
+  margin: 0 !important;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+/* ===== Submenu popup container ===== */
+.table-context-menu .ant-menu-submenu-popup {
+  padding: 8px !important;
+  border-radius: 6px;
+}
+
+/* ===== Submenu children items ===== */
+.table-context-menu .ant-menu-submenu-popup .ant-menu-item,
+.table-context-menu .ant-menu-submenu-popup .ant-menu-submenu-title {
+  padding: 6px 16px !important;
+  height: 32px !important;
+  line-height: 24px !important;
+  font-size: 12px;
+  margin: 2px 0 !important;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+/* ===== Hover effect for all items ===== */
+.table-context-menu .ant-menu-item:hover,
+.table-context-menu .ant-menu-submenu-title:hover,
+.table-context-menu .ant-menu-submenu-popup .ant-menu-item:hover,
+.table-context-menu.ant-menu-submenu-popup .ant-menu-submenu-title:hover {
+  background-color: #f5f5f5;
+}
+
+/* ===== Icon spacing ===== */
+.table-context-menu .ant-menu-item-icon {
+  font-size: 14px;
+  margin-inline-end: 8px !important;
+}
+
+/* ===== Submenu arrow ===== */
+.table-context-menu .ant-menu-submenu-arrow {
+  inset-inline-end: 6px;
+}
+
+/* ===== Divider spacing ===== */
+.table-context-menu .ant-menu-item-divider {
+  margin: 4px 0 !important;
+}
