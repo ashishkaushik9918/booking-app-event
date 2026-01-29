@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const menu = [
   // 📊 Core
@@ -36,94 +37,94 @@ const menu = [
   },
 
   // 📅 Bookings Management
-{
-  name: "Events & Bookings",
-  icon: Calendar,
-  children: [
-    // 🎉 Event Management
-    { name: "All Events", href: "/dashboard/events" },
-    { name: "Create Event", href: "/dashboard/events/create" },
-    { name: "Event Categories", href: "/dashboard/events/categories" },
-    { name: "Event Schedules", href: "/dashboard/events/schedules" },
-    { name: "Event Pricing", href: "/dashboard/events/pricing" },
-    { name: "Event Media", href: "/dashboard/events/media" },
-    { name: "Event Policies", href: "/dashboard/events/policies" },
+  {
+    name: "Events & Bookings",
+    icon: Calendar,
+    children: [
+      // 🎉 Event Management
+      { name: "All Events", href: "/dashboard/events" },
+      { name: "Create Event", href: "/dashboard/events/create" },
+      { name: "Event Categories", href: "/dashboard/events/categories" },
+      { name: "Event Schedules", href: "/dashboard/events/schedules" },
+      { name: "Event Pricing", href: "/dashboard/events/pricing" },
+      { name: "Event Media", href: "/dashboard/events/media" },
+      { name: "Event Policies", href: "/dashboard/events/policies" },
 
-    // 📅 Bookings Management
-    { name: "All Bookings", href: "/dashboard/bookings" },
-    { name: "Create Booking", href: "/dashboard/bookings/create" },
-    { name: "Pending Approval", href: "/dashboard/bookings/pending" },
-    { name: "Confirmed", href: "/dashboard/bookings/confirmed" },
-    { name: "Completed", href: "/dashboard/bookings/completed" },
-    { name: "Cancelled", href: "/dashboard/bookings/cancelled" },
-    { name: "Rescheduled", href: "/dashboard/bookings/rescheduled" },
+      // 📅 Bookings Management
+      { name: "All Bookings", href: "/dashboard/bookings" },
+      { name: "Create Booking", href: "/dashboard/bookings/create" },
+      { name: "Pending Approval", href: "/dashboard/bookings/pending" },
+      { name: "Confirmed", href: "/dashboard/bookings/confirmed" },
+      { name: "Completed", href: "/dashboard/bookings/completed" },
+      { name: "Cancelled", href: "/dashboard/bookings/cancelled" },
+      { name: "Rescheduled", href: "/dashboard/bookings/rescheduled" },
 
-    // 📊 Booking Tools
-    { name: "Booking Calendar", href: "/dashboard/bookings/calendar" },
-    { name: "Waitlist / Queue", href: "/dashboard/bookings/waitlist" },
-    { name: "VIP / Special Bookings", href: "/dashboard/bookings/vip" },
+      // 📊 Booking Tools
+      { name: "Booking Calendar", href: "/dashboard/bookings/calendar" },
+      { name: "Waitlist / Queue", href: "/dashboard/bookings/waitlist" },
+      { name: "VIP / Special Bookings", href: "/dashboard/bookings/vip" },
 
-    // 📄 Docs & Feedback
-    { name: "Agreements", href: "/dashboard/bookings/contracts" },
-    { name: "Attachments & Media", href: "/dashboard/bookings/attachments" },
-    { name: "Customer Feedback", href: "/dashboard/bookings/feedback" },
+      // 📄 Docs & Feedback
+      { name: "Agreements", href: "/dashboard/bookings/contracts" },
+      { name: "Attachments & Media", href: "/dashboard/bookings/attachments" },
+      { name: "Customer Feedback", href: "/dashboard/bookings/feedback" },
 
-    // 📈 Reports
-    { name: "Booking Reports", href: "/dashboard/bookings/reports" },
-  ],
-},
+      // 📈 Reports
+      { name: "Booking Reports", href: "/dashboard/bookings/reports" },
+    ],
+  },
 
   {
-  name: "Trips",
-  icon: MapPin,
-  children: [
-    // 🧳 Trip Management
-    { name: "All Trips", href: "/dashboard/trips" },
-    { name: "Create Trip", href: "/dashboard/trips/create" },
-    { name: "Upcoming Trips", href: "/dashboard/trips/upcoming" },
-    { name: "Ongoing Trips", href: "/dashboard/trips/ongoing" },
-    { name: "Completed Trips", href: "/dashboard/trips/completed" },
-    { name: "Cancelled Trips", href: "/dashboard/trips/cancelled" },
+    name: "Trips",
+    icon: MapPin,
+    children: [
+      // 🧳 Trip Management
+      { name: "All Trips", href: "/dashboard/trips" },
+      { name: "Create Trip", href: "/dashboard/trips/create" },
+      { name: "Upcoming Trips", href: "/dashboard/trips/upcoming" },
+      { name: "Ongoing Trips", href: "/dashboard/trips/ongoing" },
+      { name: "Completed Trips", href: "/dashboard/trips/completed" },
+      { name: "Cancelled Trips", href: "/dashboard/trips/cancelled" },
 
-    // 📅 Scheduling
-    { name: "Trip Calendar", href: "/dashboard/trips/calendar" },
-    { name: "Batch & Slots", href: "/dashboard/trips/batches" },
+      // 📅 Scheduling
+      { name: "Trip Calendar", href: "/dashboard/trips/calendar" },
+      { name: "Batch & Slots", href: "/dashboard/trips/batches" },
 
-    // 👥 Bookings & Participants
-    { name: "Trip Bookings", href: "/dashboard/trips/bookings" },
-    { name: "Participants", href: "/dashboard/trips/participants" },
-    { name: "Waitlist", href: "/dashboard/trips/waitlist" },
+      // 👥 Bookings & Participants
+      { name: "Trip Bookings", href: "/dashboard/trips/bookings" },
+      { name: "Participants", href: "/dashboard/trips/participants" },
+      { name: "Waitlist", href: "/dashboard/trips/waitlist" },
 
-    // 🏕 Logistics
-    { name: "Itineraries", href: "/dashboard/trips/itineraries" },
-    { name: "Pickup & Drop", href: "/dashboard/trips/pickup-drop" },
-    { name: "Accommodation", href: "/dashboard/trips/accommodation" },
-    { name: "Transport", href: "/dashboard/trips/transport" },
-    { name: "Meals Plan", href: "/dashboard/trips/meals" },
+      // 🏕 Logistics
+      { name: "Itineraries", href: "/dashboard/trips/itineraries" },
+      { name: "Pickup & Drop", href: "/dashboard/trips/pickup-drop" },
+      { name: "Accommodation", href: "/dashboard/trips/accommodation" },
+      { name: "Transport", href: "/dashboard/trips/transport" },
+      { name: "Meals Plan", href: "/dashboard/trips/meals" },
 
-    // 👨‍✈️ Team & Vendors
-    { name: "Trip Leaders", href: "/dashboard/trips/leaders" },
-    { name: "Vendors", href: "/dashboard/trips/vendors" },
+      // 👨‍✈️ Team & Vendors
+      { name: "Trip Leaders", href: "/dashboard/trips/leaders" },
+      { name: "Vendors", href: "/dashboard/trips/vendors" },
 
-    // 💰 Pricing & Policies
-    { name: "Pricing", href: "/dashboard/trips/pricing" },
-    { name: "Inclusions / Exclusions", href: "/dashboard/trips/inclusions" },
-    { name: "Cancellation Policy", href: "/dashboard/trips/cancellation-policy" },
-    { name: "Refund Rules", href: "/dashboard/trips/refunds" },
+      // 💰 Pricing & Policies
+      { name: "Pricing", href: "/dashboard/trips/pricing" },
+      { name: "Inclusions / Exclusions", href: "/dashboard/trips/inclusions" },
+      { name: "Cancellation Policy", href: "/dashboard/trips/cancellation-policy" },
+      { name: "Refund Rules", href: "/dashboard/trips/refunds" },
 
-    // 📄 Documents & Safety
-    { name: "Documents", href: "/dashboard/trips/documents" },
-    { name: "Insurance", href: "/dashboard/trips/insurance" },
-    { name: "Safety Guidelines", href: "/dashboard/trips/safety" },
+      // 📄 Documents & Safety
+      { name: "Documents", href: "/dashboard/trips/documents" },
+      { name: "Insurance", href: "/dashboard/trips/insurance" },
+      { name: "Safety Guidelines", href: "/dashboard/trips/safety" },
 
-    // ⭐ Reviews & Media
-    { name: "Trip Reviews", href: "/dashboard/trips/reviews" },
-    { name: "Gallery & Media", href: "/dashboard/trips/gallery" },
+      // ⭐ Reviews & Media
+      { name: "Trip Reviews", href: "/dashboard/trips/reviews" },
+      { name: "Gallery & Media", href: "/dashboard/trips/gallery" },
 
-    // 📊 Analytics
-    { name: "Trip Reports", href: "/dashboard/trips/reports" },
-  ],
-},
+      // 📊 Analytics
+      { name: "Trip Reports", href: "/dashboard/trips/reports" },
+    ],
+  },
 
   // 👥 Customers CRM
   {
@@ -181,13 +182,13 @@ const menu = [
     name: "Finance",
     icon: Wallet,
     children: [
-       { name: "Payments", href: "/dashboard/finance/payments" },
-    { name: "Invoices", href: "/dashboard/finance/invoices" },
-    { name: "Create Invoice", href: "/dashboard/finance/invoices/create" },
-    { name: "Refunds", href: "/dashboard/finance/refunds" },
-    { name: "Payouts", href: "/dashboard/finance/payouts" },
-    { name: "Taxes & GST", href: "/dashboard/finance/taxes" },
-    { name: "Invoice Reports", href: "/dashboard/finance/invoices/reports" },
+      { name: "Payments", href: "/dashboard/finance/payments" },
+      { name: "Invoices", href: "/dashboard/finance/invoices" },
+      { name: "Create Invoice", href: "/dashboard/finance/invoices/create" },
+      { name: "Refunds", href: "/dashboard/finance/refunds" },
+      { name: "Payouts", href: "/dashboard/finance/payouts" },
+      { name: "Taxes & GST", href: "/dashboard/finance/taxes" },
+      { name: "Invoice Reports", href: "/dashboard/finance/invoices/reports" },
     ],
   },
 
@@ -196,15 +197,15 @@ const menu = [
     name: "Offers",
     icon: Percent,
     children: [
-    { name: "Coupons", href: "/dashboard/offers/coupons" },          // Create/manage discount codes
-    { name: "Discount Rules", href: "/dashboard/offers/discounts" }, // Set % or fixed discounts
-    { name: "Referral Program", href: "/dashboard/offers/referrals" }, // Track referrals
-    { name: "Flash Deals / Promotions", href: "/dashboard/offers/flash-deals" }, // Time-bound promotions
-    { name: "Seasonal Offers", href: "/dashboard/offers/seasonal" }, // Festival / seasonal discounts
-    { name: "Loyalty Rewards", href: "/dashboard/offers/loyalty" },  // Customer loyalty points
-    { name: "Gift Vouchers", href: "/dashboard/offers/gift-vouchers" }, // Voucher system
-    { name: "Bulk Discounts", href: "/dashboard/offers/bulk-discounts" }, // For group bookings
-    { name: "Offer Reports", href: "/dashboard/offers/reports" },    // Analytics on offers
+      { name: "Coupons", href: "/dashboard/offers/coupons" },          // Create/manage discount codes
+      { name: "Discount Rules", href: "/dashboard/offers/discounts" }, // Set % or fixed discounts
+      { name: "Referral Program", href: "/dashboard/offers/referrals" }, // Track referrals
+      { name: "Flash Deals / Promotions", href: "/dashboard/offers/flash-deals" }, // Time-bound promotions
+      { name: "Seasonal Offers", href: "/dashboard/offers/seasonal" }, // Festival / seasonal discounts
+      { name: "Loyalty Rewards", href: "/dashboard/offers/loyalty" },  // Customer loyalty points
+      { name: "Gift Vouchers", href: "/dashboard/offers/gift-vouchers" }, // Voucher system
+      { name: "Bulk Discounts", href: "/dashboard/offers/bulk-discounts" }, // For group bookings
+      { name: "Offer Reports", href: "/dashboard/offers/reports" },    // Analytics on offers
     ],
   },
 
@@ -311,7 +312,7 @@ export function Sidebar({ mobile = false }: { mobile?: boolean }) {
       )}
     >
       <div className="h-16 flex items-center px-6 font-bold text-lg border-b">
-       <img src="https://storage.justwravel.com/remote-public/logo/JW-logo-dark.png" alt="logo" width={160} />
+        <Image src="https://storage.justwravel.com/remote-public/logo/JW-logo-dark.png" alt="logo" width={160} height={60} />
       </div>
       <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto sidebar-scroll">
         {menu.map((item) =>
@@ -324,7 +325,7 @@ export function Sidebar({ mobile = false }: { mobile?: boolean }) {
               className={cn(
                 "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted",
                 pathname === item.href &&
-                  "bg-muted font-semibold text-primary"
+                "bg-muted font-semibold text-primary"
               )}
             >
               <item.icon className="h-4 w-4" />
@@ -379,7 +380,7 @@ function SubMenu({ item, pathname }: { item: any; pathname: string }) {
                 className={cn(
                   "block rounded-md px-3 py-2 text-sm hover:bg-muted text-[13px]",
                   pathname === sub.href &&
-                    "bg-muted font-semibold text-primary"
+                  "bg-muted font-semibold text-primary"
                 )}
               >
                 {sub.name}
