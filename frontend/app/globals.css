@@ -129,6 +129,10 @@ body {
   font-family: "Poppins", sans-serif !important;
 }
 
+.ant-modal {
+  font-family: "Poppins", sans-serif !important;
+}
+
 
 
 /* Thin scrollbar for sidebar */

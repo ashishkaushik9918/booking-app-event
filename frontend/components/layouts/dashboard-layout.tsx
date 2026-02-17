@@ -19,7 +19,7 @@ export default function DashboardLayout({
 
         <div className="flex flex-1 flex-col">
           <Header />
-          <main className="flex-1 overflow-y-auto px-1 py-1 bg-muted/50">
+          <main className="flex-1 overflow-y-auto px-2 py-1 bg-white ">
             <QueryClientProvider client={queryClient}>
               {children}
             </QueryClientProvider>

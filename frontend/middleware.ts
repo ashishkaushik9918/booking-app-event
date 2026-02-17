@@ -45,9 +45,9 @@ export async function middleware(request: NextRequest) {
 
     const userRole = await verifyToken(accessToken!);
 
-    if (pathname.startsWith("/dashboard") && userRole?.role !== "admin") {
-        return NextResponse.redirect(new URL('/unauthorized', request.url));
-    }
+    // if (pathname.startsWith("/dashboard") && userRole?.role !== "admin") {
+    //     return NextResponse.redirect(new URL('/unauthorized', request.url));
+    // }
     return NextResponse.next();
 }
 
