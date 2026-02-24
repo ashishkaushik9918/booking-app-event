@@ -1,7 +1,6 @@
 import { Modal } from 'antd';
 import React from 'react';
 import { ExclamationCircleFilled } from '@ant-design/icons';
-import { on } from 'events';
 interface AlertDialogProps {
     title?: string;
     content?: string;
@@ -44,4 +43,4 @@ const AlertDialog: React.FC<AlertDialogProps> = ({ title = 'Confirmation', conte
     );
 }
 
-export default Modal;
+export default AlertDialog;
