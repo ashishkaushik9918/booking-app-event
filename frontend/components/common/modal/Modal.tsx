@@ -31,11 +31,7 @@ const AlertDialog: React.FC<AlertDialogProps> = ({ title = 'Confirmation', conte
                     okButtonProps={{
                         style: { backgroundColor: okButtonColor, borderColor: okButtonColor }
                     }}
-                    cancelButtonProps={{
-                        danger:closeButtonColor ? false: true,
-                    
-                    }}
-                >
+                    cancelButtonProps={{ danger:closeButtonColor ? false: true}}>
                     {content ?? children}
                 </Modal>
             )}
