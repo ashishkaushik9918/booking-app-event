@@ -112,9 +112,9 @@ export function Header({
               className="pl-9 pr-4 h-9 sm:h-10 rounded-full border-border/80 bg-muted/50 focus:bg-background"
             />
           </div>
-          <Button type="submit" variant="secondary" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full shrink-0">
+          {/* <Button type="submit" variant="secondary" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 rounded-full shrink-0">
             <Search className="h-4 w-4" />
-          </Button>
+          </Button> */}
         </form>
 
         {/* Search Button - Mobile */}

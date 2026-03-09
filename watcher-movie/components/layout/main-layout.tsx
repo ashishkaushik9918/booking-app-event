@@ -10,6 +10,7 @@ import { Header } from './header';
 import { Sidebar } from './sidebar';
 import { Footer } from './footer';
 import { cn } from '@/lib/utils';
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -91,7 +92,7 @@ export function MainLayout({
             isFullWidthPage && 'ml-0'
           )}
         >
-          {children}
+        <TooltipProvider>{children}</TooltipProvider>
         </main>
       </div>
 
